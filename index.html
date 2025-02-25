@@ -10,19 +10,44 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
+<script>
+    // Função para obter dados de criptomoedas
+    async function fetchCryptoPrices() {
+        const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,ripple,litecoin&vs_currencies=brl');
+        const data = await response.json();
+
+        const prices = data;
+        const marqueeElement = document.getElementById("cryptoPrices");
+
+        // Atualizar o conteúdo do marquee
+        marqueeElement.innerHTML = `
+            <span class="crypto-item">Bitcoin: R$ ${prices.bitcoin.brl}</span>
+            <span class="crypto-item">Ethereum: R$ ${prices.ethereum.brl}</span>
+            <span class="crypto-item">Ripple: R$ ${prices.ripple.brl}</span>
+            <span class="crypto-item">Litecoin: R$ ${prices.litecoin.brl}</span>
+        `;
+    }
+
+    // Chamar a função para carregar as criptos
+    fetchCryptoPrices();
+
+    // Atualizar os preços a cada 30 segundos
+    setInterval(fetchCryptoPrices, 30000);
+</script>
 
 <body>
 
     <header>
         <h1>NexusNews</h1>
         <p>Tudo sobre Tecnologia em um só lugar!</p>
+
     </header>
 
     <nav>
-        <a href="a">Início</a>
-        <a href="a">Tecnologia</a>
-        <a href="a">Novidades</a>
-        <a href="a">Games</a>
+        <a id="buttonnav" href="a">Início</a>
+        <a id="buttonnav" href="a">Tecnologia</a>
+        <a id="buttonnav" href="a">Novidades</a>
+        <a id="buttonnav" href="a">Games</a>
     </nav>
 
     <div class="container">
@@ -37,38 +62,55 @@
             </div>
             <a href="page-2.html">
             <div class="article">
-                <img src="/src-gifs/giphy.gif" alt="a">
+                <img src="https://miro.medium.com/v2/resize:fit:800/0*P_tEL5IjBHOKnomH." alt="a">
                 <h2>Realidade Aumentada (AR) no Mercado de Games: O Próximo Passo para a Imersão em 2025
                 </h2>
-                <p>Donec volutpat dolor et ante viverra, sit amet facilisis libero lobortis. Nullam ut orci id libero tempus posuere non non ante.</p>
+                <p>A realidade aumentada (AR) está avançando rapidamente e promete ser a próxima grande revolução no mercado de games. Em 2025, a AR tem o potencial de transformar completamente a experiência de jogo, misturando o mundo real e o virtual de maneira mais integrada e imersiva.</p>
             </div></a>
             <a href="page-3.html">
             <div class="article">
                 <img src="https://cdn.bb.com.br/blog/wp-content/uploads/2022/06/gif.gif" alt="">
-                <h2>IA nos Jogos de 2025: O Desafio de Criar Mundos Virtuais Inteligentes
+                <h2>A Inteligência Artificial (IA) está dando saltos gigantescos, com novas descobertas que prometem transformar a maneira como os jogos são desenvolvidos e jogados. De algoritmos mais inteligentes para criar mundos virtuais dinâmicos a IA generativa para design de personagens, essas inovações podem redefinir a indústria dos games.
                 </h2>
                 <p>Em 2025, a inteligência artificial se tornou um dos pilares fundamentais no design de jogos, com desenvolvedores utilizando IA para criar mundos dinâmicos e interações mais realistas com NPCs e inimigos.
 
                 </p>
             </div></a>
-            <a href="">
+            <a href="page-4.html">
             <div class="article">
-                <h2>Novos Avanços no Tratamento de Câncer</h2>
-                <p>Proin posuere, nulla non lobortis accumsan, sapien arcu euismod dolor, et elementum nunc sapien at metus. Etiam non risus vitae nulla facilisis.</p>
+                <img src="https://comunica.ufu.br/sites/comunica.ufu.br/files/conteudo/noticia/imagem_chamada_pabxzq.gif" alt="">
+                <h2>Metaverso e Realidade Virtual: O Futuro dos Jogos Imersivos Está Chegando</h2>
+                <p> Com o avanço das tecnologias de realidade virtual (VR) e aumentada (AR), o metaverso está se tornando uma nova fronteira para os gamers. Plataformas como o Horizon Worlds, da Meta, estão explorando maneiras de unir o mundo digital e o físico.</p>
             </div></a>
             <a href="page-5.html">
             <div class="article">
-                <h2>Como a Inteligência Artificial Está Transformando a Saúde</h2>
-                <p>Cras ac mollis libero. Integer ullamcorper neque non arcu ultricies, ac venenatis risus lobortis. Aenean euismod magna ut massa elementum, vel gravida magna pretium.</p>
+                <img src="https://miro.medium.com/v2/resize:fit:1000/0*cwpqjQIcnohlemc5.gif" alt="">
+                <h2>A Ascensão dos Jogos Independentes: Como a Tecnologia Democratizou o Desenvolvimento de Games</h2>
+                <p> Com ferramentas de desenvolvimento acessíveis e plataformas de distribuição digital como Steam e Epic Games Store, jogos independentes estão se tornando mais populares e inovadores. Desenvolvedores menores têm agora a oportunidade de criar jogos de grande sucesso.
+
+                </p>
             </div></a>
             <a href="page-6.html">
             <div class="article">
-                <h2>Jogos Olímpicos de 2024: O Que Esperar?</h2>
-                <p>Aliquam erat volutpat. Integer sed enim et purus interdum tincidunt a ut felis. Suspendisse potenti. Sed auctor bibendum felis, at facilisis arcu venenatis a.</p>
+                <img src="https://cdna.artstation.com/p/assets/images/images/011/553/922/original/anton-gonzalez-14.gif?1530171329" alt="">
+                <h2>A Realidade dos Jogos em 8K: Consoles de Nova Geração e a Busca pela Perfeição Visual?</h2>
+                <p>Com o lançamento do PlayStation 5 e Xbox Series X, os jogos em 8K estão se tornando uma realidade. Contudo, enquanto a resolução 8K promete imagens ainda mais nítidas e detalhadas, a verdadeira questão está na viabilidade dessa resolução no contexto dos jogos.
+
+                </p>
             </div></a>
         </div>
     </div>
+         <!-- O conteúdo da página vai aqui -->
+    
+    <!-- Marquee fixo no topo -->
+    <div class="marquee-container">
+        <div class="marquee" id="cryptoPrices"></div>
+    </div>
 
+    <div class="content">
+        <h1>Bem-vindo ao meu blog sobre Criptomoedas</h1>
+        <p>Aqui você encontra as últimas notícias e preços sobre as criptos mais famosas!</p>
+    </div>
     <footer>
         <p>&copy; 2025 NexusNews. Todos os direitos reservados.</p>
     </footer>
