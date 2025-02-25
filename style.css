@@ -10,7 +10,7 @@ body {
 header {
     background-color: #6730cc;
     color: white;
-    padding: 20px 0;
+    padding: 1px 0;
     text-align: center;
 }
 
@@ -19,6 +19,35 @@ nav {
     justify-content: center;
     background-color: #181818;
 }
+
+#buttonnav {
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #000000;
+  text-shadow: none;
+  background: white;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #ffffff80;
+  transition: 0.5s ease;
+  user-select: none;
+  margin: 1%;
+}
+
+#buttonnav:hover,
+:focus {
+  color: #ffffff;
+  background: #6730cc;
+  border: 1px solid #6730cc;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #6730cc, 0 0 20px #6730cc, 0 0 50px #6730cc,
+    0 0 100px #6730cc;
+}
+
+
 
 nav a {
     color: white;
@@ -92,13 +121,10 @@ nav a:hover {
 }
 
 footer {
-    text-align: center;
-    padding: 10px 0;
     background-color: #333;
     color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+    text-align: center;
+    padding: 10px;
 }
 
 @media (max-width: 768px) {
@@ -110,3 +136,35 @@ footer {
         width: 100%; /* Garante que o hover também fique ajustado */
     }
 }
+
+        /* Estilo do marquee */
+        .marquee-container {
+            position: fixed;
+            bottom: 0; /* Fixa o elemento na parte inferior da tela */
+            width: 100%;
+            overflow: hidden;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            white-space: nowrap;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        .marquee {
+            display: inline-block;
+            animation: marquee 30s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .crypto-item {
+            margin-right: 50px;
+        }
