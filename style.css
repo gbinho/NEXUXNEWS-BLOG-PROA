@@ -96,7 +96,7 @@ nav a:hover {
 }
 
 .article img {
-    width: 60rem; /* Tamanho inicial */
+    width: 40rem; /* Tamanho inicial */
     transition: width 0.3s ease, transform 0.3s ease; /* Transição suave para a largura e transformação */
     display: block; /* Garante que a imagem ocupe toda a largura do contêiner */
     margin: 0 auto; /* Centraliza a imagem horizontalmente */
@@ -139,13 +139,19 @@ footer {
 
         /* Estilo do marquee */
         .marquee-container {
+            color: #ffffff;
+            background: #6730cc;
+            border: 1px solid #6730cc;
+            text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+            box-shadow: 0 0 5px #6730cc, 0 0 20px #6730cc, 0 0 50px #6730cc,
+              0 0 100px #6730cc;
             position: fixed;
             bottom: 0; /* Fixa o elemento na parte inferior da tela */
             width: 100%;
             overflow: hidden;
             background-color: #333;
             color: white;
-            padding: 10px 0;
+            padding: 1px 0;
             white-space: nowrap;
             box-sizing: border-box;
             z-index: 1000;
